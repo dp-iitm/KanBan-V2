@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>PDF REPORT</title>
+    <style type="text/css">
+        @page {
+            @top-left {
+                content: counter(page);
+                height: 1cm;
+                text-align: center;
+                width: 1cm;
+            }
+
+            @top-center {
+                background: grey;
+                content: '';
+                display: block;
+                height: .05cm;
+                opacity: .5;
+                width: 100%;
+            }
+
+            @top-right {
+                content: string(heading);
+                font-size: 9pt;
+                height: 1cm;
+                vertical-align: middle;
+                width: 100%;
+            }
+        }
+
+        @page: first {
+            background-size: cover;
+            margin: 0;
+        }
+
+        <!-- @page chapter {
+            background: pink;
+            margin: 0;
+
+            @top-left {
+                content: none;
+            }
+
+            @top-center {
+                content: none;
+            }
+
+            @top-right {
+                content: none;
+            }
+        } -->
+
+        html {
+            color: #393939;
+            font-family: "Noto sans", sans-serif;
+            font-size: 11pt;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        h1 {
+            color: blueviolet;
+            font-size: 38pt;
+            margin: 5cm, 2cm, 0, 2cm;
+            width: 100%;
+        }
+
+        h2,
+        h3,
+        h4 {
+            color: black;
+            font-weight: 400;
+        }
+
+        h2 {
+            break-before: always;
+            font-size: 28pt;
+        }
+
+        h3 {
+            font-weight: 300;
+            font-size: 15pt;
+        }
+
+        h4 {
+            font-size: 13pt;
+        }
+
+        #cover {
+            align-content: space-between;
+            display: flex;
+            flex-wrap: wrap;
+            height: 297mm;
+        }
+
+        #cover footer {
+            background: blanchedalmond;
+            flex: 1 50%;
+            margin: 0 -2cm;
+            padding: 1cm 0;
+            padding-left: 3cm;
+        }
+
+         #contents {
+            break-after: always;
+        }
+
+        #contents footer {
+            background: blanchedalmond;
+            flex: 1 50%;
+            margin: 0 -2cm;
+            padding: 1cm 0;
+            padding-left: 3cm;
+        }
+
+        #contents h2 {
+            font-size: 20pt;
+            font-weight: 400;
+            margin-bottom: 3cm;
+        }
+
+        #contents h3 {
+            font-weight: 500;
+            margin: 3em 0 1em;
+        }
+
+        #contents h3::before {
+            background: #82b965;
+            content: '';
+            display: block;
+            height: .08cm;
+            margin-bottom: .25cm;
+            width: 2cm;
+        }
+
+        #contents ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        #contents ul li {
+            border-top: .25pt solid #c1c1c1;
+            margin: .25cm 0;
+            padding-top: .25cm;
+        }
+
+        #contents ul li::before {
+            color: #82b965;
+            content: '* ';
+            font-size: 40pt;
+            line-height: 16pt;
+            vertical-align: bottom;
+        }
+
+        #contents ul li a {
+            color: inherit;
+            text-decoration-line: inherit;
+        }
+
+        table,th,td{
+            padding:10px;
+            text-align:  center;
+            border:solid greenyellow;
+            border-collapse: collapse;
+        }
+    
+    </style>
+</head>
+
+<body>
+    <article id="cover">
+        <h1>MONTHLY REPORT FOR {{ user['name'] }} </h1>
+        <footer>
+            THE KANBAN-APP|@2022
+        </footer>
+    </article>
+    <article id="contents">
+
+      
+        <h2>Details of your work </h2>
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>LIST NAME </th>
+                    <th>TOTAL CARDS</th>
+                    <th>CARDS DONE</th>
+                    <th>CARDS NOT DONE</th>
+                    <th>CARDS CROSSED DEADLINE</th>
+                </tr>
+            </thead>
+            {% for list in lists %}
+            <body>
+               
+                <tr>
+                    <td>{{list.list_name}}</td>
+                    <td>{{list.total_cards}}</td>
+                    <td>{{list.cards_done}}</td>
+                    <td>{{ list.cards_not_done }}</td>
+                    <td>{{ list.cards_crossed_deadline }}</td>
+                </tr>
+            </body>
+            {% endfor %}
+        </table>
+
+    </article>
+    <article id="images">
+        
+        {% for list in lists %}
+            <h3>Here is your timeline for <i>{{ list.list_name }}</i> task</h3>
+
+            {% if list.chart == '' %}
+                <h5><i>no cards done yet ...</i></h5>
+
+            {% else %}
+                <img src="{{ "file:///Users/dewannshipoddar/Desktop/KANBANV2_22dp1000120_MAD2/Flask BE/static/images" ~ list.chart  }}" />
+                <p>You have completed {{ list.percentage }}% of the cards in this list</p>
+            {% endif %}
+            {% endfor %}
+    </article>
+</body>
+
+</html>

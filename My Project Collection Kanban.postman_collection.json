@@ -1,0 +1,984 @@
+{
+	"info": {
+		"_postman_id": "3d5a92b7-0625-4984-8292-b7637703b722",
+		"name": "My Project Collection Kanban",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21755794"
+	},
+	"item": [
+		{
+			"name": "get all cards of a user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authentication-Token",
+						"value": "WyI0ZGQwYzgxNjgxMmU0YTkwOTc5MGI1MjA5MDY1YWU2NSJd.Y6a_Qw.USvgIsEaR6lVz17fLPlCK8k0nm4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {}
+				},
+				"url": {
+					"raw": "http://localhost:5050/cards/get/:user_name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"cards",
+						"get",
+						":user_name"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "user_name",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authentication-Token",
+								"value": "WyI0ZGQwYzgxNjgxMmU0YTkwOTc5MGI1MjA5MDY1YWU2NSJd.Y6a_Qw.USvgIsEaR6lVz17fLPlCK8k0nm4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5050/cards/get/ron",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"cards",
+								"get",
+								"ron"
+							],
+							"query": [
+								{
+									"key": "Authentication-Token",
+									"value": "WyI0ZGQwYzgxNjgxMmU0YTkwOTc5MGI1MjA5MDY1YWU2NSJd.Y6a_Qw.USvgIsEaR6lVz17fLPlCK8k0nm4WyI0ZGQwYzgxNjgxMmU0YTkwOTc5MGI1MjA5MDY1YWU2NSJd.Y6a_Qw.USvgIsEaR6lVz17fLPlCK8k0nm4",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.2.2 Python/3.11.1"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Dec 2022 10:52:03 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1513"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"title\": \"potions hw\",\n        \"content\": \"read the manual\",\n        \"l_id\": 1,\n        \"time_created\": \"Wed, 21 Dec 2022 14:03:00 -0000\",\n        \"time_updated\": \"Thu, 22 Dec 2022 12:48:00 -0000\",\n        \"time_completed\": null,\n        \"deadline\": \"Wed, 21 Dec 2022 14:03:00 -0000\",\n        \"completed_flag\": null\n    },\n    {\n        \"id\": 3,\n        \"title\": \"charms\",\n        \"content\": \"practice spells\",\n        \"l_id\": 1,\n        \"time_created\": \"Wed, 21 Dec 2022 14:05:00 -0000\",\n        \"time_updated\": \"Wed, 21 Dec 2022 14:05:00 -0000\",\n        \"time_completed\": \"Tue, 20 Dec 2022 14:05:00 -0000\",\n        \"deadline\": \"Thu, 22 Dec 2022 14:05:00 -0000\",\n        \"completed_flag\": null\n    },\n    {\n        \"id\": 2,\n        \"title\": \"practice\",\n        \"content\": \"practice for the inter-house tournament...\",\n        \"l_id\": 2,\n        \"time_created\": \"Wed, 21 Dec 2022 14:04:00 -0000\",\n        \"time_updated\": \"Thu, 22 Dec 2022 12:34:00 -0000\",\n        \"time_completed\": \"Thu, 22 Dec 2022 12:34:00 -0000\",\n        \"deadline\": \"Fri, 23 Dec 2022 15:17:00 -0000\",\n        \"completed_flag\": null\n    },\n    {\n        \"id\": 4,\n        \"title\": \"lorem\",\n        \"content\": \"ipmsum\",\n        \"l_id\": 2,\n        \"time_created\": \"Wed, 21 Dec 2022 19:35:00 -0000\",\n        \"time_updated\": \"Thu, 22 Dec 2022 14:15:48 -0000\",\n        \"time_completed\": \"Wed, 21 Dec 2022 19:35:00 -0000\",\n        \"deadline\": \"Thu, 22 Dec 2022 19:35:00 -0000\",\n        \"completed_flag\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "get summary stats for user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authentication-Token",
+						"value": "WyJhYzhkMWU1NmRlZWE0ZDZhYjMxMDUwYzA3ZGIzZDQ3MyJd.Y6QxsA.MZnOiKqqnLCtbqQeqVuojuqvga4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {}
+				},
+				"url": {
+					"raw": "http://localhost:5050/summary/time/:user_name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"summary",
+						"time",
+						":user_name"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "user_name",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authentication-Token",
+								"value": "{{auth-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5050/summary/time/ron",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"summary",
+								"time",
+								"ron"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.2.2 Python/3.11.1"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Dec 2022 10:52:03 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1513"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n\t{\n\t\t\"t\": {\n\t\t\t\"20 December, 2022\": 1\n\t\t},\n\t\t\"list_name\": \"school\",\n\t\t\"total_cards\": 2,\n\t\t\"cards_done\": 1,\n\t\t\"cards_not_done\": 1,\n\t\t\"cards_crossed_deadline\": 1\n\t},\n\t{\n\t\t\"t\": {\n\t\t\t\"21 December, 2022\": 1,\n\t\t\t\"22 December, 2022\": 2\n\t\t},\n\t\t\"list_name\": \"quidittch match\",\n\t\t\"total_cards\": 3,\n\t\t\"cards_done\": 3,\n\t\t\"cards_not_done\": 0,\n\t\t\"cards_crossed_deadline\": 0\n\t}\n]"
+				}
+			]
+		},
+		{
+			"name": "get lists/taks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authentication-Token",
+						"value": "WyJhYzhkMWU1NmRlZWE0ZDZhYjMxMDUwYzA3ZGIzZDQ3MyJd.Y6QxsA.MZnOiKqqnLCtbqQeqVuojuqvga4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5050/list/get/:user_name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"list",
+						"get",
+						":user_name"
+					],
+					"variable": [
+						{
+							"key": "user_name",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get lists/taks",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authentication-Token",
+								"value": "WyJhYzhkMWU1NmRlZWE0ZDZhYjMxMDUwYzA3ZGIzZDQ3MyJd.Y6QxsA.MZnOiKqqnLCtbqQeqVuojuqvga4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5050/list/get/:user_name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"list",
+								"get",
+								":user_name"
+							],
+							"variable": [
+								{
+									"key": "user_name",
+									"value": null
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.2.2 Python/3.11.1"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Dec 2022 12:16:02 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "124"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"title\": \"school\"\n    },\n    {\n        \"id\": 2,\n        \"title\": \"quidittch match\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "get time-stats for the user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5050/summary/:user_name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"summary",
+						":user_name"
+					],
+					"variable": [
+						{
+							"key": "user_name",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/summary/:user_name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"summary",
+								":user_name"
+							],
+							"variable": [
+								{
+									"key": "user_name",
+									"value": null,
+									"description": "user name"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.2.2 Python/3.11.1"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Dec 2022 12:16:55 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "151"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"time\": {\n            \"20 December, 2022\": 1,\n            \"21 December, 2022\": 1,\n            \"22 December, 2022\": 1\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "get info about. particular card",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authenticatio-Token",
+						"value": "WyI0ZGQwYzgxNjgxMmU0YTkwOTc5MGI1MjA5MDY1YWU2NSJd.Y6a_Qw.USvgIsEaR6lVz17fLPlCK8k0nm4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5050/get/card/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"get",
+						"card",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get info about. particular card",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authenticatio-Token",
+								"value": "WyI0ZGQwYzgxNjgxMmU0YTkwOTc5MGI1MjA5MDY1YWU2NSJd.Y6a_Qw.USvgIsEaR6lVz17fLPlCK8k0nm4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5050/get/card/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"get",
+								"card",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.2.2 Python/3.11.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 24 Dec 2022 09:02:36 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "321"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"title\": \"hw \",\n    \"content\": \"do hw\",\n    \"l_id\": 1,\n    \"time_created\": \"Sat, 24 Dec 2022 14:29:00 -0000\",\n    \"time_updated\": \"Sat, 24 Dec 2022 14:31:00 -0000\",\n    \"time_completed\": \"Sat, 24 Dec 2022 14:31:00 -0000\",\n    \"deadline\": \"Sun, 25 Dec 2022 14:29:00 -0000\",\n    \"completed_flag\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "add a new card",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authentication-Token",
+						"value": "{{auth-token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"from api\",\n\"content\":\"content from api\",\n\"deadline\":\"2022-12-25T10:10\",\n\"completed\":\"Done\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5050/list/post/:user_name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"list",
+						"post",
+						":user_name"
+					],
+					"variable": [
+						{
+							"key": "user_name",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "add a new card",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authentication-Token",
+								"value": "{{auth-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"from api\",\n\"content\":\"content from api\",\n\"deadline\":\"2022-12-25T10:10\",\n\"completed\":\"Done\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/list/post/:user_name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"list",
+								"post",
+								":user_name"
+							],
+							"variable": [
+								{
+									"key": "user_name",
+									"value": null
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"title\": \"from api\",\n    \"content\": \"content from api\",\n    \"deadline\": \"2022-12-25T10:10\",\n    \"completed\": \"Done\"\n}"
+				}
+			]
+		},
+		{
+			"name": "add a new task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authentication-Token",
+						"value": "{{auth-token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"from api\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5050/list/put/:list_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"list",
+						"put",
+						":list_id"
+					],
+					"variable": [
+						{
+							"key": "list_id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "add a new task",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authentication-Token",
+								"value": "{{auth-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"from api\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/list/put/:list_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"list",
+								"put",
+								":list_id"
+							],
+							"variable": [
+								{
+									"key": "list_id",
+									"value": null
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "delete a card",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authentication-Token",
+						"value": "{{auth-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5050/cards/delete/:list_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"cards",
+						"delete",
+						":list_id"
+					],
+					"variable": [
+						{
+							"key": "list_id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:5050/cards/delete/:list_id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authentication-Token",
+								"value": "{{auth-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5050/cards/delete/:list_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"cards",
+								"delete",
+								":list_id"
+							],
+							"variable": [
+								{
+									"key": "list_id",
+									"value": null
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "delete whole list",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authentication-Token",
+						"value": "WyI0ZGQwYzgxNjgxMmU0YTkwOTc5MGI1MjA5MDY1YWU2NSJd.Y6a_Qw.USvgIsEaR6lVz17fLPlCK8k0nm4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5050/delete_all/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"delete_all",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit an existing card",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authentication-Token",
+						"value": "{{auth-token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"from api updated\",\n \"content\":\"updated\",\n \"deadline\":\"2022-12-26T12:00\",\n \"completed\":\"Done\"\n \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5050/cards/put/:card_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"cards",
+						"put",
+						":card_id"
+					],
+					"variable": [
+						{
+							"key": "card_id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "edit an existing card",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authentication-Token",
+								"value": "{{auth-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"from api updated\",\n \"content\":\"updated\",\n \"deadline\":\"2022-12-26T12:00\",\n \"completed\":\"Done\"\n \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/cards/put/:card_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"cards",
+								"put",
+								":card_id"
+							],
+							"variable": [
+								{
+									"key": "card_id",
+									"value": null
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "edit a list title",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authentication-Token",
+						"value": "{{auth-token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"updated task\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5050/list/put/:list_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"list",
+						"put",
+						":list_id"
+					],
+					"variable": [
+						{
+							"key": "list_id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "edit a list title",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authentication-Token",
+								"value": "{{auth-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"updated task\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/list/put/:list_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"list",
+								"put",
+								":list_id"
+							],
+							"variable": [
+								{
+									"key": "list_id",
+									"value": null
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "auth-token",
+			"value": "WyJhYzhkMWU1NmRlZWE0ZDZhYjMxMDUwYzA3ZGIzZDQ3MyJd.Y6QxsA.MZnOiKqqnLCtbqQeqVuojuqvga4"
+		}
+	]
+}
